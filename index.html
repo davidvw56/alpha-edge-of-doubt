@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpha Session Questions: Taking the Group to the Edge of Their Doubt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2942;
+    --navy-deep: #0f1a2e;
+    --teal: #2d7a7a;
+    --teal-soft: #4a9999;
+    --gold: #b8903a;
+    --gold-soft: #d4a85a;
+    --cream: #faf7f0;
+    --paper: #fdfbf5;
+    --ink: #2a2620;
+    --ink-soft: #55504a;
+    --rule: #d8cfbc;
+    --rule-soft: #e8e0ce;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 40px 120px;
+  }
+
+  /* Masthead */
+  .masthead {
+    text-align: center;
+    margin-bottom: 72px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .masthead::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 7px;
+    background: var(--paper);
+    border-left: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+  }
+
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* Intro prose */
+  .intro {
+    margin-bottom: 80px;
+  }
+
+  .intro p {
+    margin-bottom: 22px;
+    font-size: 18.5px;
+    color: var(--ink);
+  }
+
+  .intro p:first-of-type::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 1;
+    float: left;
+    margin: 6px 10px -4px 0;
+    color: var(--navy);
+  }
+
+  .intro p.pull {
+    font-style: italic;
+    font-size: 20px;
+    color: var(--navy);
+    padding: 8px 0 8px 28px;
+    border-left: 2px solid var(--gold);
+    margin: 36px 0;
+  }
+
+  /* Section divider */
+  .divider {
+    text-align: center;
+    margin: 80px 0 64px;
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 1em;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: '—';
+    color: var(--rule);
+    margin: 0 16px;
+    letter-spacing: 0;
+  }
+
+  /* Topic entries */
+  .topic {
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  .topic-number {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .topic h2 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .edges {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding: 24px 28px;
+    background: var(--cream);
+    border-left: 3px solid var(--teal);
+  }
+
+  .edge {
+    font-size: 16.5px;
+    line-height: 1.6;
+  }
+
+  .edge-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .edge-label.b {
+    color: var(--teal);
+  }
+
+  .edge-text {
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .question-group {
+    margin-top: 28px;
+  }
+
+  .question-heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .question-heading.believer {
+    color: var(--teal);
+  }
+
+  .questions {
+    list-style: none;
+    padding: 0;
+  }
+
+  .questions li {
+    position: relative;
+    padding-left: 36px;
+    margin-bottom: 18px;
+    font-size: 17.5px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  .questions li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 22px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .questions.believer-questions li::before {
+    background: var(--teal-soft);
+  }
+
+  /* Craft section */
+  .craft {
+    margin-top: 96px;
+    padding-top: 64px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .craft-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .craft-header .eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .craft-header h2 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--navy);
+    font-style: italic;
+  }
+
+  .craft-intro {
+    margin-bottom: 56px;
+    font-size: 18px;
+  }
+
+  .craft-intro p {
+    margin-bottom: 20px;
+  }
+
+  .frame {
+    margin-bottom: 52px;
+    padding: 32px 36px;
+    background: var(--cream);
+    border-top: 3px solid;
+    position: relative;
+  }
+
+  .frame.non-christian { border-top-color: var(--gold); }
+  .frame.mixed { border-top-color: var(--teal); }
+  .frame.maturing { border-top-color: var(--navy); }
+
+  .frame-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .frame.non-christian .frame-label { color: var(--gold); }
+  .frame.mixed .frame-label { color: var(--teal); }
+  .frame.maturing .frame-label { color: var(--navy); }
+
+  .frame h3 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 23px;
+    color: var(--navy);
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+
+  .frame p {
+    margin-bottom: 16px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .frame p:last-child { margin-bottom: 0; }
+
+  .frame em {
+    color: var(--navy);
+    font-style: italic;
+  }
+
+  /* Closing */
+  .closing {
+    margin-top: 80px;
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .closing::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 32px;
+  }
+
+  /* Colophon */
+  .colophon {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule-soft);
+    text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .colophon span {
+    color: var(--gold);
+    margin: 0 8px;
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 56px 24px 80px; }
+    h1 { font-size: 32px; }
+    .topic h2 { font-size: 24px; }
+    .edges { padding: 20px 22px; }
+    .frame { padding: 26px 24px; }
+    .questions li { padding-left: 28px; font-size: 16.5px; }
+  }
+
+  @media print {
+    body { font-size: 11pt; background: white; }
+    .page { padding: 0; max-width: 100%; }
+    .topic { page-break-inside: avoid; }
+    .frame { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<article class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">A Position Paper for Alpha Hosts</div>
+    <h1>Alpha Session Questions</h1>
+    <div class="subtitle">Taking the Group to the <em>Edge of Their Doubt</em></div>
+  </header>
+
+  <section class="intro">
+    <p>There is a quiet assumption baked into how most of us were taught to run an Alpha small group — that the room divides neatly into two camps. The seekers, who need persuading. And the Christians, who are there to help. We imagine our job as making a case. Building the argument. Clearing away objections until the path forward is obvious.</p>
+
+    <p>But anyone who has sat around an Alpha table more than a few times has noticed something that doesn't quite fit that script. The unbeliever sometimes asks a question so honest it stops the room. And the young Christian — the one who said yes to Jesus a year ago, or ten — sits quietly, nodding along, while something underneath goes unspoken. Not because they've lost their faith. Because they haven't yet let it cost them anything.</p>
+
+    <p class="pull">Every person who walks into an Alpha room, no matter where they sit on the map of belief, is standing at an edge. And the host's real work — the pastoral work, the slow work, the work the Spirit tends to bless — is to help them hear the debate they are already having with themselves.</p>
+
+    <p>I've come to think of this as the <em>edge of doubt</em>. Not doubt as a failure of faith, but doubt as the place where the next yes is waiting. The unbeliever's edge is often existential — <em>is there a God at all, and if there is, does he have anything to do with me?</em> The immature believer's edge has moved inward. They've accepted that there's a Spirit who made them and pursues them. What they haven't yet settled is whether they will actually pray expecting an answer. Whether they'll read the book that sits on their nightstand. Whether they'll treat their spouse, their coworkers, their ambitions as if any of this were true on a Tuesday morning.</p>
+
+    <p>Different edges. Same threshold. Both are trying to decide whether the next step makes sense for them.</p>
+
+    <p>That is what we're doing in Alpha. Not making arguments. Hosting an <em>internal debate</em> — the one each guest brought with them before they arrived, the one they'll keep having long after the eleven weeks are over. We're not there to win it for them. We're there to give it oxygen. To ask the question underneath the question, the one they might not ask themselves on a Wednesday evening in traffic. To let them sit at their own edge long enough that the Spirit can do what he does.</p>
+
+    <p>What follows is a set of opening questions for each of the Alpha topics, shaped around this frame. I've named the non-believer's edge and the believer's edge for each one, because the topic is the same but the threshold is not. And I've written questions for both — questions designed to surface the internal debate rather than to settle it. At the end, a few notes on craft: how the question you ask a non-Christian is actually a different instrument than the question you ask a maturing believer, and how to know which one to reach for when the room is mixed.</p>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- TOPIC 1 -->
+  <section class="topic">
+    <div class="topic-number">One</div>
+    <h2>Is there more to life than this?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Is the material, sensory world all there is? Is meaning something we invent, or something we're meant to discover?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I say there's more. But if a stranger watched my week, would they find any evidence of it? Or is "more" a belief I hold on Sundays and forget by Tuesday?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>When was the last time something in your life pointed to something bigger than itself — and what did you do with that moment?</li>
+        <li>If you took an honest inventory of where your time, money, and attention went this past month, what would it say you actually believe life is about?</li>
+        <li>What's the difference between a life that has meaning and a life that's just busy — and which one, honestly, describes yours right now?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>You've said there's more. What part of your week still looks like there isn't?</li>
+        <li>If someone followed you around for seven days without knowing you were a Christian, where in the footage would they first start to wonder?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 2 -->
+  <section class="topic">
+    <div class="topic-number">Two</div>
+    <h2>Who is Jesus?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Was Jesus real? A moral teacher? A myth the church later dressed up as God? Or something the categories can't quite hold?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I confess Jesus is Lord. But is he actually the first person I turn to, or a background figure I consult in emergencies?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>If Jesus walked into this room tonight, what would you want to ask him first — and what does that question tell you about what you need right now?</li>
+        <li>What's the difference between knowing about someone and actually knowing them? Where does Jesus fall on that spectrum for you?</li>
+        <li>Lewis said Jesus was either a liar, a lunatic, or the Lord. Is there a quieter, fourth option you've been holding onto? What is it?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>When did Jesus last surprise you, confront you, or change your mind about something? If nothing comes to mind, what do you think that silence is telling you?</li>
+        <li>If you had to describe Jesus to someone who had never heard of him — not the doctrines, just the person — what would you say? And would your description match how you spent yesterday?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 3 -->
+  <section class="topic">
+    <div class="topic-number">Three</div>
+    <h2>Why did Jesus die?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Why would a loving God require a death? Isn't the cross morally strange — maybe even troubling?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I accept the doctrine. But do I feel forgiven, or do I still live like I'm earning it? And do I extend to others what I say I've received?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>What's something you've done that you've never quite forgiven yourself for — and what would it take to actually let it go?</li>
+        <li>If forgiveness is truly free, why do so many people — religious and not — seem to live like they're still paying?</li>
+        <li>Who in your life right now are you not extending to them what you say God has extended to you? What's that about?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>You believe Jesus paid it. So why are you still trying so hard to prove you're good?</li>
+        <li>Is there a person in your life whose forgiveness you've been quietly withholding? What would it mean for you to believe the cross applies to them the way it applies to you?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 4 -->
+  <section class="topic">
+    <div class="topic-number">Four</div>
+    <h2>How can I have faith?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Isn't faith just wishful thinking? How do I trust something I can't verify?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">My faith is real, but fragile. What do I do when certainty fades? Is doubt the opposite of faith — or part of it?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>What's something you're certain of that you can't actually prove? How did you come to trust it?</li>
+        <li>When was the last time your faith — in God, in a person, in yourself — actually got tested? What happened to it?</li>
+        <li>Can you have real faith and real doubt at the same time? Or does one cancel the other?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>When your faith feels thin, what do you default to — effort, withdrawal, performance, or honesty? What would it look like to bring the thinness to God instead of hiding it from him?</li>
+        <li>Is there a doubt you've been carrying that you haven't yet said out loud — to anyone, including yourself? What would happen if you did?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 5 -->
+  <section class="topic">
+    <div class="topic-number">Five</div>
+    <h2>Why and how do I pray?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Am I talking to anyone? Or is this just self-talk with extra steps?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I believe prayer works. Do I actually pray expecting an answer? Or do I pray out of duty and brace for silence?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>If you knew for certain God was listening tonight, what would you actually say? And why aren't you saying it?</li>
+        <li>What's the difference between a prayer you perform and a prayer that's honest? Which kind do you pray more often?</li>
+        <li>Have you ever prayed and felt like something shifted — in the situation, or in you? What happened?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>When was the last time you prayed with the real expectation that God might answer — not just that it would make you feel a little calmer?</li>
+        <li>What would your prayer life look like this week if you believed — really believed — that the Father wanted to hear from you?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 6 -->
+  <section class="topic">
+    <div class="topic-number">Six</div>
+    <h2>Why and how should I read the Bible?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Is this a reliable book? Why this one and not others?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I own a Bible. I don't read it. Why not — and what do I think will happen if I do?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>What's a book or piece of writing that actually changed how you live? What was it about that book that got through to you?</li>
+        <li>If the Bible is what Christians claim it is, what should be different about how we treat it compared to other books? Is it?</li>
+        <li>What stops you from opening it tomorrow morning — time, skepticism, fear of what it says, or something else?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>You believe this is God's word. If your closest friend wrote you a letter, you'd read it the day it came. What does it mean that his letter has been sitting unopened for weeks?</li>
+        <li>What's one passage that has actually shaped how you live? And when was the last time you let a new one do that?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 7 -->
+  <section class="topic">
+    <div class="topic-number">Seven</div>
+    <h2>How does God guide us?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Does God actually communicate with individuals, or do people just project their own wishes onto him?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I believe God guides. Do I listen? And when I sense a nudge, do I obey — or do I rationalize it away?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>Have you ever had a sense that you were supposed to do something — or not do something — and you couldn't explain where the thought came from? What happened?</li>
+        <li>If God is guiding you, what would you expect that to feel like? And have you felt it?</li>
+        <li>What's a decision you're wrestling with right now where you'd love clearer direction? What have you actually done to listen for it?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>What's the last nudge you got from God that you ignored? What do you think that pattern is doing to your ability to hear him the next time?</li>
+        <li>Is there an area of your life you've quietly marked as off-limits to God's guidance — your money, your calendar, your marriage, your career? Why that one?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 8 -->
+  <section class="topic">
+    <div class="topic-number">Eight</div>
+    <h2>How can I resist evil?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Is "evil" real — or is it just a label we put on what we don't like? Is there actually a personal force working against us?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I believe spiritual warfare is real in theory. Do I fight it — or do I keep calling my pet sins "struggles" and let them sit there?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>What's the difference between a bad habit and something that feels like it has real power over you? Have you ever experienced the second?</li>
+        <li>Where in your life do you keep making the same bad decision even though you know better? What do you think is underneath that?</li>
+        <li>Is there such a thing as a spiritual enemy? If there were, how would you know?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>You believe evil is real. What are you actually doing to resist it this week? If the honest answer is nothing, what is that telling you?</li>
+        <li>Is there a sin you've been managing rather than fighting — negotiating with instead of naming? What would it look like to bring it into the light this week?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 9 -->
+  <section class="topic">
+    <div class="topic-number">Nine</div>
+    <h2>The Holy Spirit — who he is, what he does, and how to be filled</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">The whole category of "spirit" feels foreign. Is this real — or is it emotion dressed up as the supernatural?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I've said yes to Jesus. Have I ever actually said yes to the Spirit's presence and power — or have I kept the Christian life manageable by leaving this part vague?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>Have you ever experienced something you couldn't explain — a moment of peace, conviction, guidance, presence — that felt like it came from outside you?</li>
+        <li>If the Spirit actually lives in believers, what would you expect to see different about them? Do you see it in yourself?</li>
+        <li>What scares you about this topic? Be honest — is it the loss of control, the risk of looking foolish, the fear it isn't real, or something else?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>You believe the Spirit lives in you. When was the last time you asked him to do something in you or through you — and then actually got out of his way?</li>
+        <li>Is there a part of this topic — tongues, healing, prophetic sense, the Spirit's voice — that you've quietly filed under "not for me"? What's really behind that?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 10 -->
+  <section class="topic">
+    <div class="topic-number">Ten</div>
+    <h2>Why and how should I tell others?</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">Isn't evangelism arrogant? Who are Christians to tell anyone else what to believe?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">If I really believed what I say I believe, my closest people would know. Why don't they? What am I actually afraid of?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>What's a piece of good news you've received that you couldn't help but share? Why was that different from harder things you've kept quiet about?</li>
+        <li>If a friend of yours was about to make a decision you were sure would harm them, would you say something? Why — and does that same logic apply here?</li>
+        <li>Who in your life knows the real you, and also knows what you believe about Jesus? If there's a gap between those two circles of people, what lives in the gap?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>Name three people close to you who don't know Jesus. When did you last pray for them by name? When did you last actually say something?</li>
+        <li>What's the fear underneath your silence — rejection, awkwardness, looking like one of those Christians? What would it look like to take that fear to God instead of letting it make the decision for you?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOPIC 11 -->
+  <section class="topic">
+    <div class="topic-number">Eleven</div>
+    <h2>The church, healing, and the rest of my life</h2>
+    <div class="edges">
+      <div class="edge">
+        <span class="edge-label">The non-believer's edge</span>
+        <span class="edge-text">The church has hurt people. Why would I join that? And does God actually do anything tangible in people's lives today?</span>
+      </div>
+      <div class="edge">
+        <span class="edge-label b">The believer's edge</span>
+        <span class="edge-text">I'm saved. Now what? Am I going to reorder my life around this — or just add Jesus as a Sunday feature and leave the rest of the week untouched?</span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading">Opening questions for the room</div>
+      <ul class="questions">
+        <li>If this whole thing is true — not partially, but actually true — what would have to change about how you're living? Name one specific thing.</li>
+        <li>The church has hurt people. The church has also healed people. What's your experience been, and what would it take for you to give it another chance — or a first one?</li>
+        <li>Five years from now, if you kept living exactly the way you're living today, who would you be? Is that who you want to be?</li>
+      </ul>
+    </div>
+
+    <div class="question-group">
+      <div class="question-heading believer">Deeper questions for the believer</div>
+      <ul class="questions believer-questions">
+        <li>You said yes to Jesus. What's the second yes you've been avoiding — the one that would actually cost you something? Your time, your marriage posture, your money, your career ambition, your pride? What is it?</li>
+        <li>If Alpha ended tonight and you went back to your ordinary week, what would be different — not in what you believe, but in what you do?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CRAFT SECTION -->
+  <section class="craft">
+    <div class="craft-header">
+      <div class="eyebrow">A Word on Craft</div>
+      <h2>How to Ask the Question the Room Actually Needs</h2>
+    </div>
+
+    <div class="craft-intro">
+      <p>A good question is not a clever question. It is a question that names something the person was already trying to say to themselves. It gives the internal debate a place to happen out loud.</p>
+      <p>But the question you ask changes depending on who is in the room — because the edge changes. Here is what I've found, after sitting at a lot of these tables.</p>
+    </div>
+
+    <div class="frame non-christian">
+      <div class="frame-label">For a room of non-Christians</div>
+      <h3>Ask the question underneath the question.</h3>
+      <p>The non-believer's edge is almost always more honest than their opening sentence. They will ask about science, or suffering, or hypocrisy in the church, and those are real questions — but they are rarely the real question. The real question is usually something like: <em>am I alone in this universe?</em> Or: <em>is there anyone who actually sees me?</em> Or: <em>does my life mean anything if no one is watching?</em></p>
+      <p>The craft is to honor the surface question without getting stuck there. You don't bulldoze past it. You sit with it for a moment, and then you ask the thing underneath — gently, with genuine curiosity, as if you are wondering alongside them. <em>That's a real question. Can I ask you something next to it? When did that question first start to matter to you?</em></p>
+      <p>You are not trying to get them to an answer. You are trying to help them hear themselves ask the real one. When a person hears their own deepest question spoken aloud in a safe room, something has already begun.</p>
+    </div>
+
+    <div class="frame mixed">
+      <div class="frame-label">For a mixed room</div>
+      <h3>Ask a question both edges can enter from different doors.</h3>
+      <p>The mistake most hosts make in a mixed room is writing two sets of questions and aiming them at different people. That turns the table into a classroom with tracks. Don't do that.</p>
+      <p>Instead, write one question that is wide enough for both edges to enter. <em>When did your faith last get tested, and what happened to it?</em> A non-believer can answer that. A believer can answer that. And the answers will sound different, and they will learn from each other. The non-believer gets to hear a Christian admit their faith was shaken and held. The believer gets to hear an honest doubt spoken without shame. Both walk closer to their own edge because the other person walked closer to theirs.</p>
+      <p>The craft here is <em>generous framing</em>. Never ask a question that assumes the answer. Never ask a question only a Christian could answer. Ask the one that sits at the human layer underneath the doctrinal one, and trust the Spirit with the rest.</p>
+    </div>
+
+    <div class="frame maturing">
+      <div class="frame-label">For the maturing believer who has found an edge</div>
+      <h3>Ask the question that names the second yes.</h3>
+      <p>This is the harder craft, and the one most of us were never trained for. When a believer has found their edge — whether they like it or not — they usually already know what the next step is. They don't need information. They need permission to stop avoiding it.</p>
+      <p>These questions are specific. They are gentle but they do not flinch. <em>What's the nudge you've been ignoring? What's the sin you've been managing instead of fighting? What's the second yes you've been putting off?</em> They don't require the host to know the answer. They only require the host to be willing to let the question sit in the room without rushing to rescue anyone from it.</p>
+      <p>A word of warning. The temptation at this edge is to turn the question into a sermon — to follow it with three points and a Bible verse. Don't. The question is the pastoral act. The silence after it is where the work happens. Trust that silence. The Spirit is more present in it than your clarifying paragraph will be.</p>
+      <p>And remember: you are not their savior. You are a friend at a table with coffee between you. The goal is not to get them across their edge in one evening. The goal is to help them see it clearly enough that they cannot pretend it isn't there anymore. The next step is between them and God.</p>
+    </div>
+
+  </section>
+
+  <div class="closing">
+    <p>Alpha is not, in the end, a persuasion machine. It is a room with a meal on the table and a question in the air. The host's job — every host, every table, every week — is to notice where each person is standing, and ask the one question that helps them see it too.</p>
+    <p style="margin-top: 24px;">The rest is the Spirit's.</p>
+  </div>
+
+  <div class="colophon">
+    A position paper <span>✦</span> On hosting internal debate <span>✦</span> At the edge of doubt
+  </div>
+
+</article>
+
+</body>
+</html>
